@@ -161,7 +161,7 @@ namespace HHSAdvMAUI
 
         private static async Task<string> ReadTextFileAsync(string filename)
         {
-            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync($"Raw/{filename}");
+            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(filename);
             using StreamReader reader = new StreamReader(fileStream);
             return await reader.ReadToEndAsync();
         }
