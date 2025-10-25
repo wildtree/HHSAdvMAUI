@@ -52,7 +52,7 @@
 		<MauiIcon Include="Resources\AppIcon\isako_1024.png" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\hhs_emblem.svg" Color="#3F3F3F" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
