@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HHSAdvMAUI.AboutPage"
+             Title="このプログラムについて">
+    <Grid ColumnDefinitions="Auto, *" BackgroundColor="{DynamicResource BackGroundColor}">
+        <Grid VerticalOptions="Start" Margin="16,16,16,16">
+            <Image Grid.Column="0" Source="{Binding Icon}" WidthRequest="72" HeightRequest="72"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <ScrollView VerticalScrollBarVisibility="Default" HorizontalScrollBarVisibility="Default">
+                <Label Text="{Binding AboutText}" TextColor="{DynamicResource TextColor}"/>
+            </ScrollView>
+        </Grid>
+    </Grid>
+</ContentPage> 

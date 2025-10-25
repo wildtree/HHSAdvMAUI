@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HHSAdvMAUI"
+             x:Class="HHSAdvMAUI.SettingsPage"
+             Title="設定">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}" />
+    </Shell.BackButtonBehavior>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:IntToBooleanConverter x:Key="IntToBooleanConverter"/>
+            <local:StringToBooleanConverter x:Key="StringToBooleanConverter"/>
+            <local:EnumToBooleanConverter x:Key="EnumToBooleanConverter"/>
+        </ResourceDictionary>
+        <ControlTemplate x:Key="RadioAsButtonTemplate">
+            <Border Stroke="Gray"
+                StrokeThickness="1"
+                BackgroundColor="{TemplateBinding BackgroundColor}"
+                Padding="0"
+                StrokeShape="RoundRectangle 6">
+                <Grid>
+                    <!-- 中央寄せ -->
+                    <ContentPresenter 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                </Grid>
+            </Border>
+
+        </ControlTemplate>
+        <Style TargetType="RadioButton" x:Key="PushButtonStyle">
+            <Setter Property="ControlTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Stroke="{DynamicResource ButtonBorderColor}"
+                       StrokeThickness="1"
+                       BackgroundColor="{TemplateBinding BackgroundColor}"
+                       Padding="0"
+                       StrokeShape="RoundRectangle 6">
+                            <Grid>
+                                <ContentPresenter 
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="BackgroundColor" Value="{DynamicResource ButtonNormalBackgroundColor}" />
+            <Setter Property="TextColor" Value="{DynamicResource ButtonNormalTextColor}" />
+
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="WidthRequest" Value="60" />
+
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <!-- チェック状態 -->
+                    <VisualStateGroup Name="CheckStates">
+                        <VisualState Name="Checked">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{DynamicResource ButtonActiveBackgroundColor}" />
+                                <Setter Property="TextColor" Value="{DynamicResource ButtonActiveTextColor}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Unchecked">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{DynamicResource ButtonNormalBackgroundColor}" />
+                                <Setter Property="TextColor" Value="{DynamicResource ButtonNormalTextColor}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <!-- コンテンツ -->
+    <VerticalStackLayout Padding="20" Background="{DynamicResource BackGroundColor}">
+        <Grid ColumnDefinitions="*, Auto">
+            <Label Grid.Column="0" Text="音楽再生を行なう" TextColor="{DynamicResource TextColor}"/>
+            <Switch Grid.Column="1" IsToggled="{Binding PlaySound, Mode=TwoWay}" HorizontalOptions="End" Margin="0,0,0,0"/>
+        </Grid>
+        <Grid ColumnDefinitions="*, Auto">
+            <Label Grid.Column="0" Text="オープニングを表示する" TextColor="{DynamicResource TextColor}"/>
+            <Switch Grid.Column="1" IsToggled="{Binding OpeningRoll, Mode=TwoWay}" HorizontalOptions="End" Margin="0,0,0,0"/>
+        </Grid>
+        <Label Text="テーマカラー" TextColor="{DynamicResource AccentColor}"/>
+        <Grid ColumnDefinitions="*, *, *" HorizontalOptions="Center">
+            <RadioButton Grid.Column="0" Content="ライト" GroupName="ThemeColorGroup" Style="{StaticResource PushButtonStyle}" Background="{DynamicResource ButtonBackgroundColor}" TextColor="{DynamicResource ButtonTextColor}" IsChecked="{Binding ThemeMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light}" Value="Light"/>
+            <RadioButton Grid.Column="1" Content="ダーク" GroupName="ThemeColorGroup" Style="{StaticResource PushButtonStyle}" Background="{DynamicResource ButtonBackgroundColor}" TextColor="{DynamicResource ButtonTextColor}" IsChecked="{Binding ThemeMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark}" Value="Dark"/>
+            <RadioButton Grid.Column="2" Content="システム" GroupName="ThemeColorGroup" Style="{StaticResource PushButtonStyle}" Background="{DynamicResource ButtonBackgroundColor}" TextColor="{DynamicResource ButtonTextColor}" IsChecked="{Binding ThemeMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=System}" Value="System"/>
+        </Grid>
+        <Label Text="フォントサイズ" TextColor="{DynamicResource AccentColor}"/>
+        <Grid ColumnDefinitions="*, *, *, *" HorizontalOptions="Center">
+            <RadioButton Grid.Column="0" Content="Aあ" FontSize="12" GroupName="FontSizeGroup" Style="{StaticResource PushButtonStyle}" Background="{DynamicResource ButtonBackgroundColor}" TextColor="{DynamicResource ButtonTextColor}" VerticalOptions="Center" IsChecked="{Binding FontSize, Converter={StaticResource IntToBooleanConverter}, ConverterParameter=12}" Value="12"/>
+            <RadioButton Grid.Column="1" Content="Aあ" FontSize="16" GroupName="FontSizeGroup" Style="{StaticResource PushButtonStyle}" Background="{DynamicResource ButtonBackgroundColor}" TextColor="{DynamicResource ButtonTextColor}" VerticalOptions="Center" IsChecked="{Binding FontSize, Converter={StaticResource IntToBooleanConverter}, ConverterParameter=16}" Value="16"/>
+            <RadioButton Grid.Column="2" Content="Aあ" FontSize="20" GroupName="FontSizeGroup" Style="{StaticResource PushButtonStyle}" Background="{DynamicResource ButtonBackgroundColor}" TextColor="{DynamicResource ButtonTextColor}" VerticalOptions="Center" IsChecked="{Binding FontSize, Converter={StaticResource IntToBooleanConverter}, ConverterParameter=20}" Value="20"/>
+            <RadioButton Grid.Column="3" Content="Aあ" FontSize="24" GroupName="FontSizeGroup" Style="{StaticResource PushButtonStyle}" Background="{DynamicResource ButtonBackgroundColor}" TextColor="{DynamicResource ButtonTextColor}" VerticalOptions="Center" IsChecked="{Binding FontSize, Converter={StaticResource IntToBooleanConverter}, ConverterParameter=24}" Value="24"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

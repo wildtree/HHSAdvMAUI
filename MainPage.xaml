@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             x:Class="HHSAdvMAUI.MainPage">
+    <ContentPage.MenuBarItems>
+        <!-- menu -->
+        <MenuBarItem Text="メニュー">
+            <MenuFlyoutItem Text="設定" Command="{Binding OpenSettingsCommand}"/>
+            <MenuFlyoutItem Text="このプログラムについて" Command="{Binding OpenAboutCommand}"/>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="設定" Command="{Binding OpenSettingsCommand}" />
+        <ToolbarItem Text="このプログラムについて" Command="{Binding OpenAboutCommand}" />
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid Grid.Row="1" Margin="0,32,0,0" Background="{DynamicResource BackGroundColor}">
+            <Grid>
+
+                <Grid x:Name="MainContent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- bitmap area -->
+                    <Border Grid.Row="0" StrokeThickness="0" Background="{DynamicResource BackGroundColor}">
+                        <skia:SKCanvasView x:Name="Image" PaintSurface="OnPaintSurface"/>
+                    </Border>
+                    <!-- command entry -->
+                    <Entry x:Name="InputTextBox" Grid.Row="1" HeightRequest="24" Margin="2" VerticalTextAlignment="Center" Placeholder="どうする？" PlaceholderColor="{DynamicResource PlaceholderColor}" TextColor="{DynamicResource TextColor}"  Background="{DynamicResource BackGroundColor}" IsVisible="Collapse" Completed="OnInputCompleted"/>
+                    <!-- hit any key -->
+                    <Button x:Name="GameStartButton" Grid.Row="2" Text="ゲーム開始" FontSize="14" IsVisible="Visible" Clicked="GameStartButton_Clicked" Background="{DynamicResource ButtonBackgroundColor}" TextColor="{DynamicResource ButtonTextColor}"/>
+                    <!-- message area -->
+                    <ScrollView x:Name="ScrollArea"  Grid.Row="3" Margin="2" Background="{DynamicResource BackGroundColor}" VerticalScrollBarVisibility="Always" HorizontalScrollBarVisibility="Default">
+                        <Label x:Name="LogArea" TextColor="{DynamicResource TextColor}" FontSize="{Binding FontSize}" Text="{Binding Log}"/>
+                    </ScrollView>
+                </Grid>
+            </Grid>
+
+        </Grid>
+        <!-- オーバーレイ: クレジット -->
+        <Grid x:Name="CreditOverlay" BackgroundColor="Black" Opacity="0.8" IsVisible="False">
+            <AbsoluteLayout x:Name="CreditStage" BackgroundColor="Transparent" Opacity="1.0" HorizontalOptions="Center">
+                <VerticalStackLayout x:Name="CreditStack" Spacing="20" HorizontalOptions="Center"/>
+            </AbsoluteLayout>
+
+        </Grid>
+
+    </Grid>
+</ContentPage>

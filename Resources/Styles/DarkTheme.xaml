@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="HHSAdvMAUI.Resources.Styles.DarkTheme">
+    <Color x:Key="BackGroundColor">#121212</Color>
+    <Color x:Key="TextColor">#FFFFFF</Color>
+    <Color x:Key="AccentColor">#BB86FC</Color>
+    <Color x:Key="SecondaryTextColor">#B3B3B3</Color>
+    <Color x:Key="BorderColor">#333333</Color>
+    <Color x:Key="PlaceholderColor">#666666</Color>
+    <Color x:Key="HighlightColor">#3700B3</Color>
+    <Color x:Key="ErrorColor">#CF6679</Color>
+    <Color x:Key="ButtonBackgroundColor">#1F1F1F</Color>
+    <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+    <Color x:Key="InputBackgroundColor">#1E1E1E</Color>
+    <Color x:Key="InputTextColor">#FFFFFF</Color>
+    <Color x:Key="LinkColor">#8AB4F8</Color>
+    <Color x:Key="ShadowColor">#000000</Color>
+    <Color x:Key="DividerColor">#2C2C2C</Color>
+    <Color x:Key="TooltipBackgroundColor">#333333</Color>
+    <Color x:Key="TooltipTextColor">#FFFFFF</Color>
+    <Color x:Key="CardBackgroundColor">#1C1C1C</Color>
+    <Color x:Key="CardBorderColor">#444444</Color>
+    <Color x:Key="DisabledColor">#555555</Color>
+    <Color x:Key="SuccessColor">#03DAC6</Color>
+    <Color x:Key="WarningColor">#FFB300</Color>
+    <Color x:Key="InfoColor">#2196F3</Color>
+
+	<Color x:Key="ButtonNormalBackgroundColor">#1F1F1F</Color>
+	<Color x:Key="ButtonActiveBackgroundColor">#2196F3</Color>
+	<Color x:Key="ButtonHoverBackgroundColor">#5F5F5F</Color>
+	<Color x:Key="ButtonActiveHoverBackgroundColor">#1976D2</Color>
+	<Color x:Key="ButtonNormalTextColor">#7F7F7F</Color>
+	<Color x:Key="ButtonActiveTextColor">#FFFFFF</Color>
+	<Color x:Key="ButtonHoverTextColor">#CCCCCC</Color>
+	<Color x:Key="ButtonActiveHoverTextColor">#E2E2E2</Color>
+
+	<Color x:Key="ButtonBorderColor">#1F1F1F</Color>
+
+</ResourceDictionary>
