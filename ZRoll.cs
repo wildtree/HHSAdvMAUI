@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+#if ANDROID
+using Android.Views;
+#endif
 
 namespace HHSAdvMAUI
 {
@@ -48,6 +51,13 @@ namespace HHSAdvMAUI
             Overlay!.IsVisible = true;
             Stage!.Dispatcher.Dispatch(async () =>
             {
+#if ANDROID
+                var activity = Platform.CurrentActivity;
+                if (activity != null)
+                {
+                    activity.Window?.AddFlags(WindowManagerFlags.KeepScreenOn);
+                }
+#endif
                 // 子を追加した後に高さを測定
                 var size = Stack!.Measure(double.PositiveInfinity, double.PositiveInfinity);
                 while (size.Height <= 0 || Stage!.Height <= 0)
@@ -64,6 +74,12 @@ namespace HHSAdvMAUI
 
                 // 上方向にアニメーション
                 await Stack.TranslateTo(0, -size.Height, (uint)(Duration * 1000.0), Easing.Linear);
+#if ANDROID
+                if (activity != null)
+                {
+                    activity.Window?.ClearFlags(WindowManagerFlags.KeepScreenOn);
+                }
+#endif
 
                 // スクロール完了後にコールバック実行
                 onCompleted?.Invoke();
