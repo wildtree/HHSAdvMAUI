@@ -1,0 +1,5 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+	<background android:drawable="@mipmap/isako_1024_background" />
+	<foreground android:drawable="@mipmap/isako_1024_foreground" />
+	<monochrome android:drawable="@drawable/isako_1024_monochrome" />
+</adaptive-icon>
