@@ -11,8 +11,8 @@ DefaultDirName={commonpf64}\HHSAdvMAUI
 DefaultGroupName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 OutputBaseFilename=hhsadvmaui_setup_{#MyAppVersion}
-Compression=lzma
-SolidCompression=no
+Compression=zip
+SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64compatible
 
 [Files]

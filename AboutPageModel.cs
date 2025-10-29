@@ -47,7 +47,7 @@ namespace HHSAdvMAUI
 
 PalmOS version: hiro © 2002-2004
 Android version: hiro © 2011-2025
-Web version: hiro © 2012-2024
+Web version: hiro © 2012-2025
 M5 version: hiro © 2023-2025
 Qt version: hiro © 2024-2025
 PicoCalc version: hiro © 2025
