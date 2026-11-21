@@ -14,7 +14,7 @@ namespace HHSAdvMAUI
         {
             var window = base.CreateWindow(activationState);
 
-            window.SizeChanged += (s, e) =>
+            window.Destroying += (s, e) =>
             {
                 Preferences.Set("Width", (int)window.Width);
                 Preferences.Set("Height", (int)window.Height);
