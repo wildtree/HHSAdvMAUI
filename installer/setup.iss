@@ -1,6 +1,6 @@
 #define MyAppName    "ハイハイスクールアドベンチャー(.NET MAUI)"
 #define MyAppExeName "HHSAdvMAUI.exe"
-#define MyAppVersion GetFileVersion("..\bin\Release\net9.0-windows10.0.19041.0\win10-x64\publish\HHSAdvMAUI.exe")
+#define MyAppVersion GetFileVersion("..\bin\Release\net11.0-windows10.0.19041.0\win-x64\publish\HHSAdvMAUI.exe")
 
 [Setup]
 AppName={#MyAppName}
@@ -16,7 +16,7 @@ SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64compatible
 
 [Files]
-Source: "..\bin\Release\net9.0-windows10.0.19041.0\win10-x64\publish\*"; DestDir: "{app}"; Flags: recursesubdirs
+Source: "..\bin\Release\net11.0-windows10.0.19041.0\win-x64\publish\*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Languages]
 Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl"

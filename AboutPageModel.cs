@@ -46,7 +46,7 @@ namespace HHSAdvMAUI
 {appVersion}
 
 PalmOS version: hiro © 2002-2004
-Android version: hiro © 2011-2025
+Android version: hiro © 2011-2026
 Web version: hiro © 2012-2025
 M5 version: hiro © 2023-2025
 Qt version: hiro © 2024-2025
@@ -54,7 +54,7 @@ PicoCalc version: hiro © 2025
 SDL version: hiro © 2025
 Windows version: hiro © 2025
 AvaloniaUI version: hiro © 2025
-.NET MAUI version: hiro © 2025
+.NET MAUI version: hiro © 2025-2026
 
 - Project ZOBPlus -
 Hayami <hayami@zob.jp>
